@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	int (*print)(va_list list);
 	int numChar = 0;
+	int res;
 	va_list list;
 
 	if (!format)
@@ -34,8 +35,9 @@ int _printf(const char *format, ...)
 				continue;
 			}
 		}
-
-		numChar += print(list);
+		if (result == -1)
+			return (-1);
+		numChar += result;
 		format++;
 	}
 	va_end(list);
