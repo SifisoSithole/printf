@@ -10,10 +10,9 @@ int _printf(const char *format, ...)
 {
 	int (*print)(va_list list);
 	int numChar = 0;
-	int res = 0;
 	va_list list;
 
-	if (!format)
+	if (!format || (*format == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(list, format);
 	while (*format)
@@ -28,17 +27,17 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (!*format)
+				break;
 			print = specifier(*format);
-			if (print == NULL)
+			if (!print)
 			{
-				format++;
+				_putchar(*format);
+				numChar++;
 				continue;
 			}
 		}
-		res = print(list);
-		if (res == -1)
-			return (-1);
-		numChar += res;
+		numChar += print(list);
 		format++;
 	}
 	va_end(list);

@@ -10,10 +10,7 @@ int print_char(va_list list)
 {
 	char c = va_arg(list, int);
 
-	if (c)
-		return (_putchar(c));
-	else
-		return (-1);
+	return (_putchar(c));
 }
 
 /**
@@ -25,15 +22,24 @@ int print_char(va_list list)
 int print_str(va_list list)
 {
 	int numChar = 0;
+	char *str1 = "(nil)";
 	char *str = va_arg(list, char *);
 
-	if (!str)
-		return (-1);
-
-	while (*str)
+	if (str)
 	{
-		numChar += _putchar(*str);
-		str++;
+		while (*str)
+		{
+			numChar += _putchar(*str);
+			str++;
+		}
+	}
+	else
+	{
+		while (*str1)
+		{
+			numChar += _putchar(*str1);
+			str1++;
+		}
 	}
 	return (numChar);
 }
