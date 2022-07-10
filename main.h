@@ -3,7 +3,12 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-
+/**
+ * struct t - Struct t
+ *
+ * @c: Character
+ * @f: Function associated
+ */
 typedef struct t
 {
 	char c;

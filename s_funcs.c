@@ -9,7 +9,7 @@
 int print_char(va_list list)
 {
 	char c = va_arg(list, int);
-	
+
 	if (c)
 		return (_putchar(c));
 	else
