@@ -22,7 +22,7 @@ int print_char(va_list list)
 int print_str(va_list list)
 {
 	int numChar = 0;
-	char *str1 = "(nil)";
+	char *str1 = "(null)";
 	char *str = va_arg(list, char *);
 
 	if (str)
