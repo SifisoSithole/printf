@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			if (!*format)
 				break;
 			print = specifier(*format);
-			if (!print)
+			if (print == NULL)
 			{
 				_putchar(*format);
 				numChar++;
