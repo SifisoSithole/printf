@@ -29,7 +29,10 @@ int _printf(const char *format, ...)
 			format++;
 			print = specifier(*format);
 			if (print == NULL)
-				return (-1);
+			{
+				format++;
+				continue;
+			}
 		}
 
 		numChar += print(list);

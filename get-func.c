@@ -25,4 +25,4 @@ int (*specifier(char c))(va_list list)
 		i++;
 	}
 	return (NULL);
-}	
+}
