@@ -25,6 +25,6 @@ int print_char(va_list list);
 
 int print_str(va_list list);
 
-int print_num(int n);
+int print_num(va_list list);
 
 #endif /* MAIN_H */

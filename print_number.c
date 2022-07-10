@@ -6,10 +6,10 @@
  *
  * Return: Number of characters
  */
-int print_number(int n, int num)
+int print_numbr(int n, int num)
 {
 	if (n / 10)
-		print_numbr(n / 10);
+		print_numbr(n / 10, num);
 
 	num += _putchar((n % 10) + '0');
 
@@ -20,8 +20,9 @@ int print_number(int n, int num)
  * print_number - Function
  * @n: argument
  */
-int print_num(int n)
+int print_num(va_list list)
 {
+	int n = va_arg(list, int);
 	int num = 0;
 	if (n < 0)
 	{
