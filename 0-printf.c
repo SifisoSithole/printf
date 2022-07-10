@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	int (*print)(va_list list);
 	int numChar = 0;
-	int res;
+	int res = 0;
 	va_list list;
 
 	if (!format)
@@ -35,9 +35,10 @@ int _printf(const char *format, ...)
 				continue;
 			}
 		}
-		if (result == -1)
+		res = print(list);
+		if (res == -1)
 			return (-1);
-		numChar += result;
+		numChar += res;
 		format++;
 	}
 	va_end(list);
