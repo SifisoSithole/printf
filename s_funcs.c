@@ -8,7 +8,12 @@
  */
 int print_char(va_list list)
 {
-	return (_putchar(va_arg(list, int)));
+	char c = va_arg(list, int);
+	
+	if (c)
+		return (_putchar(c));
+	else
+		return (-1);
 }
 
 /**
@@ -21,6 +26,9 @@ int print_str(va_list list)
 {
 	int numChar = 0;
 	char *str = va_arg(list, char *);
+
+	if (!str)
+		return (-1);
 
 	while (*str)
 	{
