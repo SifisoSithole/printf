@@ -14,6 +14,11 @@ int int_to_base(unsigned int num, unsigned int base)
 	int i = 0;
 	int numChar = 0;
 
+	if (num == 0)
+	{
+		numChar += _putchar('0');
+		return (numChar);
+	}
 	while (num > 0)
 	{
 		res[i] = str[num % base];
@@ -78,6 +83,11 @@ int print_X(va_list list)
 	int numChar = 0;
 
 	num = va_arg(list, unsigned int);
+	if (num == 0)
+	{
+		numChar += _putchar('0');
+		return (numChar);
+	}
 	while (num > 0)
 	{
 		res[i] = str[num % 16];
