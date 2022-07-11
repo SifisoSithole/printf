@@ -62,7 +62,7 @@ int print_str(va_list list)
  */
 int print_num(va_list list)
 {
-	int  k;
+	int k;
 	int num;
 	int l;
 	int numInt = 0;
@@ -90,5 +90,37 @@ int print_num(va_list list)
 		numInt += _putchar((num % 10)  * -1 + '0');
 	else
 		numInt += _putchar((num % 10) + '0');
+	return (numInt);
+}
+
+/**
+ * print_unum - this function print integers
+ * @list: list of arguments
+ *
+ * Return: number of numbers printed
+ */
+int print_unum(va_list list)
+{
+	unsigned int k;
+	unsigned int num;
+	unsigned int l;
+	int numInt = 0;
+
+	k = 1;
+	num = va_arg(list, unsigned int);
+	l = num;
+	while (l > 9)
+	{
+		l = l / 10;
+		k = k * 10;
+	}
+
+	while (k > 9)
+	{
+		numInt += _putchar((num / k) % 10 + '0');
+		k = k / 10;
+	}
+
+	numInt += _putchar((num % 10) + '0');
 	return (numInt);
 }
