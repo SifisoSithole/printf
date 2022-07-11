@@ -116,10 +116,15 @@ int print_X(va_list list)
  */
 int print_S(va_list list)
 {
-	int numChar;
+	int numChar = 0;
 	int i = 0;
 	char *str = va_arg(list, char *);
 
+	if (!str)
+	{
+		numChar += _printf("%s", "\"(null)\"");
+		return (numChar);
+	}
 	while (str[i])
 	{
 		if (str[i] < 32 || str[i] >= 127)
