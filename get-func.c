@@ -12,7 +12,9 @@ int (*specifier(char c))(va_list list)
 	data_t type[] = {
 		{'c', print_char},
 		{'s', print_str},
-		{'%', print_char},
+		{'%', print_per},
+		{'d', print_num},
+		{'i', print_num},
 		{'\0', NULL}
 	};
 	int i = 0;

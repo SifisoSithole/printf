@@ -8,10 +8,15 @@
  */
 int print_char(va_list list)
 {
-	char c = va_arg(list, int);
-
-	return (_putchar(c));
+	return (_putchar(va_arg(list, int)));
 }
+
+int print_per(va_list list)
+{
+	va_arg(list, int);
+	return (_putchar('%'));
+}
+
 
 /**
  * print_str - This function print string
