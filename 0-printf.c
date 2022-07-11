@@ -27,8 +27,6 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (!*format)
-				break;
 			print = specifier(*format);
 			if (print == NULL)
 			{
