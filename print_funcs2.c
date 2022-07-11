@@ -123,7 +123,11 @@ int print_S(va_list list)
 	while (str[i])
 	{
 		if (str[i] < 32 || str[i] >= 127)
-			numChar += _printf("\\x%X", (unsigned int)str[i]);
+		{
+			if (str[i] == '\0')
+				numChar += _printf("\\x%X", 0);
+			else
+				numChar += _printf("\\x%X", (unsigned int)str[i]);
 		else
 			numChar += _putchar(str[i]);
 		i++;
