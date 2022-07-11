@@ -128,6 +128,7 @@ int print_S(va_list list)
 				numChar += _printf("\\x%X", 0);
 			else
 				numChar += _printf("\\x%X", (unsigned int)str[i]);
+		}
 		else
 			numChar += _putchar(str[i]);
 		i++;
