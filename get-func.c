@@ -19,6 +19,8 @@ int (*specifier(char c))(va_list list)
 	};
 	int i = 0;
 
+	if (c == '\0')
+		return (NULL);
 	while (type[i].f != NULL)
 	{
 		if (type[i].c == c)
