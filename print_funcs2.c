@@ -107,3 +107,26 @@ int print_X(va_list list)
 
 	return (numChar);
 }
+
+/**
+ * print_S - This function prints the string but changes non printable chars
+ * @list: Arguments
+ *
+ * Return: Number of characters printed
+ */
+int print_S(va_list list)
+{
+	int numChar;
+	int i = 0;
+	char *str = va_arg(list, char *);
+
+	while (str[i])
+	{
+		if (str[i] < 32 || str[i] >= 127)
+			numChar += _printf("\\x%X", (unsigned int)str[i]);
+		else
+			numChar += _putchar(str[i]);
+		i++;
+	}
+	return (numChar);
+}
