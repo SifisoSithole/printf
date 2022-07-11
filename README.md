@@ -28,7 +28,7 @@ Where the specifier character at the end is the most significant component, sinc
 On **success**, the **total number** of characters written is returned.
 If a writing error occurs, the error indicator (ferror) is set and a negative number is returned.
  
-## The tasksfor this Project.
+## The tasks for this Project.
 -[0] **I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life.** 
 Write a function that produces output according to a format.
 
