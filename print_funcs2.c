@@ -132,7 +132,7 @@ int print_S(va_list list)
 			if (str[i] == '\0')
 				numChar += _printf("\\x%X", 0);
 			else
-				numChar += _printf("\\x%X", (unsigned int)str[i]);
+				numChar += _printf("\\x0%X", (unsigned int)str[i]);
 		}
 		else
 			numChar += _putchar(str[i]);
