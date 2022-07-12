@@ -17,6 +17,13 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (*format)
 	{
+		if (*format == '\\' && *(format + 1) == '%')
+		{
+			_putchar('%');
+			format++;
+			continue;
+		}
+
 		if (*format != '%')
 		{
 			numChar += _putchar(*format);
