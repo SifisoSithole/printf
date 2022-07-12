@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * print_R - prints a string in rot13
@@ -29,7 +28,7 @@ int print_R(va_list R)
 				break;
 			}
 		}
-		if (!in[j]);
+		if (!in[j])
 		{
 			_putchar(str[i]);
 			count++;

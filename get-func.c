@@ -21,6 +21,8 @@ int (*specifier(char c))(va_list list)
 		{'x', print_x},
 		{'X', print_X},
 		{'S', print_S},
+		{'p', print_p},
+		{'R', print_R},
 		{'\0', NULL}
 	};
 	int i = 0;
