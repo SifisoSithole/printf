@@ -15,6 +15,7 @@ int (*specifier(char c))(va_list list)
 		{'%', print_per},
 		{'d', print_num},
 		{'i', print_num},
+		{'b', print_b},
 		{'u', print_unum},
 		{'o', print_o},
 		{'x', print_x},

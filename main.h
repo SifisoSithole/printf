@@ -29,6 +29,10 @@ int print_str(va_list list);
 
 int print_num(va_list list);
 
+int int_to_base(unsigned int num, unsigned int base);
+
+int print_b(va_list list);
+
 int print_unum(va_list list);
 
 int print_o(va_list list);
