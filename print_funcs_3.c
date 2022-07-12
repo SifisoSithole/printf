@@ -37,6 +37,7 @@ int print_p(va_list list)
 			num = num / 16;
 			i++;
 		}
+		i--;
 		while (i >= 0)
 		{
 			if (res[i] >= 10)
