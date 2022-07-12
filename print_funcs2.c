@@ -138,7 +138,7 @@ int print_S(va_list list)
 			else
 			{
 				num = str[i];
-				_printf("\\x");
+				numChar += _printf("\\x");
 				while (num > 0)
 				{
 					res[index] = strBase[num % 16];
