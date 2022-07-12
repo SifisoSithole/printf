@@ -36,3 +36,32 @@ int print_R(va_list R)
 	}
 	return (count);
 }
+
+/**
+ * print_r - This function prints string in reverse
+ * @list: Arguments
+ *
+ * Return: number of characters printed
+ */
+int print_r(va_list list)
+{
+	int i = 0;
+	int numChar = 0;
+	char *str = va_arg(list, char *);
+
+	if (!str)
+	{
+		numChar += _printf("(null)");
+		return (numChar);
+	}
+	while (str[i])
+		i++;
+
+	i--;
+	while (i >= 0)
+	{
+		numChar += _putchar(str[i]);
+		i--;
+	}
+	return (numChar);
+}

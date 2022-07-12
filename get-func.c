@@ -22,6 +22,7 @@ int (*specifier(char c))(va_list list)
 		{'X', print_X},
 		{'S', print_S},
 		{'p', print_p},
+		{'r', print_r},
 		{'R', print_R},
 		{'\0', NULL}
 	};
