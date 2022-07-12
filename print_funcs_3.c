@@ -47,7 +47,7 @@ int print_p(va_list list)
 		}
 	}
 	else
-		numChar += _printf("\"(null)\"");
+		numChar += _printf("(null)");
 
 	return (numChar);
 }

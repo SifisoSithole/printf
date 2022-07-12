@@ -126,7 +126,7 @@ int print_S(va_list list)
 
 	if (!str)
 	{
-		numChar += _printf("%s", "\"(null)\"");
+		numChar += _printf("%s", "(null)");
 		return (numChar);
 	}
 	while (str[i])
