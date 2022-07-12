@@ -133,28 +133,22 @@ int print_S(va_list list)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
-			if (str[i] == '\0')
-				numChar += _printf("\\x0%X", 0);
-			else
+			num = str[i];
+			numChar += _printf("\\x");
+			while (num > 0)
 			{
-				num = str[i];
-				numChar += _printf("\\x");
-				while (num > 0)
-				{
-					res[index] = strBase[num % 16];
-					num = num / 16;
-					index++;
-				}
-				res[index] = '\0';
-
+				res[index] = strBase[num % 16];
+				num = num / 16;
+				index++;
+			}
+			res[index] = '\0';
+			index--;
+			if (index == 0)
+				numChar += _putchar('0');
+			while (index >= 0)
+			{
+				numChar += _putchar(res[index]);
 				index--;
-				if (index == 0)
-					numChar += _putchar('0');
-				while (index >= 0)
-				{
-					numChar += _putchar(res[index]);
-					index--;
-				}
 			}
 		}
 		else
