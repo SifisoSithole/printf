@@ -116,8 +116,12 @@ int print_X(va_list list)
  */
 int print_S(va_list list)
 {
+	const char *strBase = "0123456789ABCDEF";
+	char res[6];
 	int numChar = 0;
 	int i = 0;
+	int index = 0;
+	int num;
 	char *str = va_arg(list, char *);
 
 	if (!str)
@@ -130,9 +134,28 @@ int print_S(va_list list)
 		if (str[i] < 32 || str[i] >= 127)
 		{
 			if (str[i] == '\0')
-				numChar += _printf("\\x%X", 0);
+				numChar += _printf("\\x0%X", 0);
 			else
-				numChar += _printf("\\x0%X", (unsigned int)str[i]);
+			{
+				num = str[i];
+				_printf("\\x");
+				while (num > 0)
+				{
+					res[index] = strBase[num % 16];
+					num = num / 16;
+					index++;
+				}
+				res[index] = '\0';
+
+				index--;
+				if (index == 0)
+					numChar += _putchar('0');
+				while (index >= 0)
+				{
+					numChar += _putchar(res[index]);
+					index--;
+				}
+			}
 		}
 		else
 			numChar += _putchar(str[i]);
