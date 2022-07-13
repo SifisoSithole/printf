@@ -143,8 +143,6 @@ int print_S(va_list list)
 			}
 			res[index] = '\0';
 			index--;
-			if (index == 0)
-				numChar += _putchar('0');
 			while (index >= 0)
 			{
 				numChar += _putchar(res[index]);
