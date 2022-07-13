@@ -27,16 +27,22 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			print = specifier(*format);
+			if (*format == '%')
+			{
+				numChar += _putchar('%');
+				format++;
+				continue;
+			}
+			else
+				print = specifier(*format);
 			if (print == NULL)
 			{
 				numChar += _putchar('%');
 				numChar += _putchar(*format);
-				format++;
-				continue;
 			}
+			else
+				numChar += print(list);
 		}
-		numChar += print(list);
 		format++;
 	}
 	va_end(list);
