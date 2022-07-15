@@ -7,7 +7,7 @@
  *
  * Return: Address of function
  */
-int (*specifier(char c))(va_list list)
+int (*specifier(char c))(va_list list, ...)
 {
 	data_t type[] = {
 		{'c', print_char},

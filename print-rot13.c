@@ -6,7 +6,7 @@
  *
  * Return: number of chars printed
  */
-int print_R(va_list R)
+int print_R(va_list R, ...)
 {
 	char *str;
 	unsigned int i, j;
@@ -43,7 +43,7 @@ int print_R(va_list R)
  *
  * Return: number of characters printed
  */
-int print_r(va_list list)
+int print_r(va_list list, ...)
 {
 	int i = 0;
 	int numChar = 0;
@@ -62,6 +62,35 @@ int print_r(va_list list)
 	{
 		numChar += _putchar(str[i]);
 		i--;
+	}
+	return (numChar);
+}
+
+/**
+ * print_spe - This function handles format specifier for integers
+ * @spe: format
+ * @num: Integer
+ *
+ * Return number of characters printed
+ */
+int print_spe(char *spe, int num)
+{
+	int k = 0;
+	int numChar = 0;
+
+	while (spe[k])
+	{
+		if (spe[k] == '+')
+		{
+			if (num >= 0)
+				numChar += _putchar('+');
+		}
+		if (spe[k] == ' ')
+		{
+			if (num >= 0)
+				numChar += _putchar(' ');
+		}
+		k++;
 	}
 	return (numChar);
 }

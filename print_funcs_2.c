@@ -46,7 +46,7 @@ int int_to_base(unsigned int num, unsigned int base)
  *
  * Return: 1 on  sucess
  */
-int print_o(va_list list)
+int print_o(va_list list, ...)
 {
 	int numChar = 0;
 
@@ -60,7 +60,7 @@ int print_o(va_list list)
  *
  * Return: 1 on  sucess
  */
-int print_x(va_list list)
+int print_x(va_list list, ...)
 {
 	int numChar = 0;
 
@@ -74,7 +74,7 @@ int print_x(va_list list)
  *
  * Return: Number of characters printed
  */
-int print_X(va_list list)
+int print_X(va_list list, ...)
 {
 	const char *str = "0123456789ABCDEF";
 	char res[65];
@@ -114,7 +114,7 @@ int print_X(va_list list)
  *
  * Return: Number of characters printed
  */
-int print_S(va_list list)
+int print_S(va_list list, ...)
 {
 	const char *strBase = "0123456789ABCDEF";
 	char res[6];

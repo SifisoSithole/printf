@@ -6,7 +6,7 @@
  *
  * Return: 1 on sucess
  */
-int print_char(va_list list)
+int print_char(va_list list, ...)
 {
 	return (_putchar(va_arg(list, int)));
 }
@@ -17,7 +17,7 @@ int print_char(va_list list)
  *
  * Return: 1 on sucess
  */
-int print_per(va_list list)
+int print_per(va_list list, ...)
 {
 	va_arg(list, int);
 	return (_putchar('%'));
@@ -29,7 +29,7 @@ int print_per(va_list list)
  *
  * Return: Number of characters printed
  */
-int print_str(va_list list)
+int print_str(va_list list, ...)
 {
 	int numChar = 0;
 	char *str1 = "(null)";
@@ -60,15 +60,18 @@ int print_str(va_list list)
  *
  * Return: number of numbers printed
  */
-int print_num(va_list list)
+int print_num(va_list list, ...)
 {
-	int k;
-	int num;
-	int l;
-	int numInt = 0;
-
-	k = 1;
+	int k = 1, num, l, numInt = 0;
+	char *spe;
+	va_list ap;
+	
+	va_start(ap, list);
 	num = va_arg(list, int);
+	spe = va_arg(ap, char *);
+	if (spe[0] != '\0')
+		numInt += print_spe(spe, num);
+
 	l = num;
 	if (num < 0)
 	{
@@ -99,7 +102,7 @@ int print_num(va_list list)
  *
  * Return: number of numbers printed
  */
-int print_unum(va_list list)
+int print_unum(va_list list, ...)
 {
 	unsigned int k;
 	unsigned int num;

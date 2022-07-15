@@ -6,7 +6,7 @@
  *
  * Return: Number of characters printed
  */
-int print_b(va_list list)
+int print_b(va_list list, ...)
 {
 	int numChar = 0;
 	unsigned int num = va_arg(list, unsigned int);
@@ -21,7 +21,7 @@ int print_b(va_list list)
  *
  * Return: Number of characters printed
  */
-int print_p(va_list list)
+int print_p(va_list list, ...)
 {
 	int numChar = 0;
 	int res[64];
