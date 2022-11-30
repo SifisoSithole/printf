@@ -64,22 +64,7 @@ The files will be compiled this way:
 - ``gcc -Wall -Werror -Wextra -pedantic *.c``
 #### Use.
 In the ``main.c`` file, use the ``_printf`` function like so:
-```c
-#include "holberton.h"
-/**
- * main - main function of program
- * Return: always 0
- */
-int main(void)
-{
-	int num;
-	char *string;
-	
-	num = 98;
-	string = "Hello, Holberon!"
-	_printf("%s is %i.\n", string, num);
-	return (0);
-}
+```
 ```
 ```{bash}
 linux>$  gcc -Wall -Werror -Wextra -pedantic *.c -o print_program
