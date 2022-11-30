@@ -62,10 +62,7 @@ All of the ``.c`` files along with a main.c file are to be compiled with ``gcc 4
 
 The files will be compiled this way:
 - ``gcc -Wall -Werror -Wextra -pedantic *.c``
-#### Use.
-In the ``main.c`` file, use the ``_printf`` function like so:
-```
-```
+#### 
 ```{bash}
 linux>$  gcc -Wall -Werror -Wextra -pedantic *.c -o print_program
 linux>$  ./print_program
